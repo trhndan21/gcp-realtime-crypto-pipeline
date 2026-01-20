@@ -81,10 +81,15 @@ Visualizing live price movements (BTC, ETH, ...) using Logarithmic Scale.
 ### Quick Start
 
 1. **Setup Infra:**
-bash gsutil mb -l us-central1 gs://YOUR_BUCKET_NAME/ bq mk --location=us-central1 streaming_dataset
-3. **Run Producer:**
-bash pip install google-cloud-storage requests python producer_file.py
-4. **Submit Spark Job:**
-bash gcloud dataproc jobs submit pyspark spark_streaming_files.py \ --cluster=spark-streaming-cluster \ --region=us-central1 \ --project=YOUR_PROJECT_ID
-
+```bash
+gsutil mb -l us-central1 gs://YOUR_BUCKET_NAME/ bq mk --location=us-central1 streaming_dataset
+```
+2. **Run Producer:**
+```bash
+pip install google-cloud-storage requests python producer.py
+```
+3. **Submit Spark Job:**
+```bash
+gcloud dataproc jobs submit pyspark spark_streaming_crypto.py \ --cluster=spark-streaming-cluster \ --region=us-central1 \ --project=YOUR_PROJECT_ID
+```
 </details>
